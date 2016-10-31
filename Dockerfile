@@ -9,3 +9,4 @@ RUN mv /etc/apache2/mods-available/status.* /etc/apache2/mods-enabled/ && \
                -e 's/#Require ip 192.0.2.0/Require ip 192.168.1.0/' \
                /etc/apache2/mods-enabled/status.conf
 RUN sed -i -e 's/^LogLevel.*$/LogLevel info/' /etc/apache2/apache2.conf
+RUN echo "ServerName geofront.dyndns.info" >> /etc/apache2/apache2.conf
