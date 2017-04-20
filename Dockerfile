@@ -17,4 +17,5 @@ RUN mv /etc/apache2/mods-available/status.* /etc/apache2/mods-enabled/ && \
 RUN sed -i -e 's/^LogLevel.*$/LogLevel info/' /etc/apache2/apache2.conf
 RUN echo "ServerName geofront.dyndns.info" >> /etc/apache2/apache2.conf
 
-CMD [ "/bin/bash", "-x", "/usr/sbin/apache2ctl", "-D", "FOREGROUND" ]
+ENTRYPOINT [ "/bin/bash", "-x", "/usr/sbin/apache2ctl" ]
+CMD [ "-D", "FOREGROUND" ]
